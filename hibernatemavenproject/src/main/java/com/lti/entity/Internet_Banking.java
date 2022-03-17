@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,14 @@ public class Internet_Banking {
 	
 	@Column(name = "Tranascation_Pass")
 	private String transpass;
+	
+	@Column(name = "Account_No")
+	private int accountno;
+	
+	
+	@OneToOne
+	@JoinColumn(name = "Account_No")
+	private Account acc;
 
 	public String getLogid() {
 		return logid;
@@ -43,6 +53,14 @@ public class Internet_Banking {
 
 	public void setTranspass(String transpass) {
 		this.transpass = transpass;
+	}
+
+	public int getAccountno() {
+		return accountno;
+	}
+
+	public void setAccountno(int accountno) {
+		this.accountno = accountno;
 	}
 	
 	

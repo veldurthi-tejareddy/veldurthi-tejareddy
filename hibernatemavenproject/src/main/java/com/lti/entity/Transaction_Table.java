@@ -7,7 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 @Entity
@@ -31,7 +32,10 @@ public class Transaction_Table {
 	@Column(name = "Date_Time")
 	private LocalDate datetime;
 	
-	@OneToMany
+	@Column(name = "Trans_Details")
+	private String trans;
+	
+	@ManyToOne
 	@JoinColumn(name = "Account_No")
 	private Account acc;
 
@@ -82,6 +86,15 @@ public class Transaction_Table {
 	public void setAcc(Account acc) {
 		this.acc = acc;
 	}
+
+	public String getTrans() {
+		return trans;
+	}
+
+	public void setTrans(String trans) {
+		this.trans = trans;
+	}
+	
 	
 	
 	

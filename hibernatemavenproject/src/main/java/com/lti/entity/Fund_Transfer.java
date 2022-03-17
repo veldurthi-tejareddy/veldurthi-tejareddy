@@ -5,7 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 @Entity
@@ -22,7 +23,15 @@ public class Fund_Transfer {
 	
 	@Column(name = "Pay_Accno")
 	private int payAccno;
+	
+	@Column(name = "Account_No")
+	private int accountno;
 
+	
+	@ManyToOne
+	@JoinColumn(name = "Account_No")
+	private Account acc;
+	
 	public int getPayId() {
 		return payId;
 	}
@@ -45,6 +54,9 @@ public class Fund_Transfer {
 
 	public void setPayAccno(int payAccno) {
 		this.payAccno = payAccno;
+	}
+	public void setAccountno(int accountno) {
+		this.accountno = accountno;
 	}
 	
 	
