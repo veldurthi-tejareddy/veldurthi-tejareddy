@@ -18,7 +18,7 @@ public class Card_Details {
 	@Id
 	@GeneratedValue
 	@Column(name = "Card_No")
-	private int cardno;
+	private int cardNumber;
 	
 	@Column(name = "Issue_Date")
 	private LocalDate issueDate;
@@ -31,11 +31,11 @@ public class Card_Details {
 	private Account acc;
 
 	public int getCardno() {
-		return cardno;
+		return cardNumber;
 	}
 
 	public void setCardno(int cardno) {
-		this.cardno = cardno;
+		this.cardNumber = cardno;
 	}
 
 	public LocalDate getIssueDate() {
